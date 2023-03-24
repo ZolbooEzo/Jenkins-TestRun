@@ -82,11 +82,15 @@
 					}
 				},
 				"url": {
-					"raw": "{{url_global}}/boards/",
+					"raw": "https://api.trello.com/1/boards/",
+					"protocol": "https",
 					"host": [
-						"{{url_global}}"
+						"api",
+						"trello",
+						"com"
 					],
 					"path": [
+						"1",
 						"boards",
 						""
 					]
@@ -165,11 +169,15 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "{{url_global}}/members/me/boards",
+					"raw": "https://api.trello.com/1/members/me/boards",
+					"protocol": "https",
 					"host": [
-						"{{url_global}}"
+						"api",
+						"trello",
+						"com"
 					],
 					"path": [
+						"1",
 						"members",
 						"me",
 						"boards"
@@ -247,11 +255,15 @@
 					}
 				],
 				"url": {
-					"raw": "{{url_global}}/boards/{{boardID}}",
+					"raw": "https://api.trello.com/1/boards/{{boardID}}",
+					"protocol": "https",
 					"host": [
-						"{{url_global}}"
+						"api",
+						"trello",
+						"com"
 					],
 					"path": [
+						"1",
 						"boards",
 						"{{boardID}}"
 					]
@@ -332,11 +344,15 @@
 					}
 				},
 				"url": {
-					"raw": "{{url_global}}/boards/{{boardID}}",
+					"raw": "https://api.trello.com/1/boards/{{boardID}}",
+					"protocol": "https",
 					"host": [
-						"{{url_global}}"
+						"api",
+						"trello",
+						"com"
 					],
 					"path": [
+						"1",
 						"boards",
 						"{{boardID}}"
 					]
@@ -420,11 +436,15 @@
 					}
 				},
 				"url": {
-					"raw": "{{url_global}}/lists",
+					"raw": "https://api.trello.com/1/lists",
+					"protocol": "https",
 					"host": [
-						"{{url_global}}"
+						"api",
+						"trello",
+						"com"
 					],
 					"path": [
+						"1",
 						"lists"
 					]
 				}
@@ -500,11 +520,15 @@
 					}
 				],
 				"url": {
-					"raw": "{{url_global}}/boards/{{boardID}}/lists",
+					"raw": "https://api.trello.com/1/boards/{{boardID}}/lists",
+					"protocol": "https",
 					"host": [
-						"{{url_global}}"
+						"api",
+						"trello",
+						"com"
 					],
 					"path": [
+						"1",
 						"boards",
 						"{{boardID}}",
 						"lists"
@@ -577,11 +601,15 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{url_global}}/lists/{{listID}}",
+					"raw": "https://api.trello.com/1/lists/{{listID}}",
+					"protocol": "https",
 					"host": [
-						"{{url_global}}"
+						"api",
+						"trello",
+						"com"
 					],
 					"path": [
+						"1",
 						"lists",
 						"{{listID}}"
 					]
@@ -662,11 +690,15 @@
 					}
 				},
 				"url": {
-					"raw": "{{url_global}}/lists/{{listID}}",
+					"raw": "https://api.trello.com/1/lists/{{listID}}",
+					"protocol": "https",
 					"host": [
-						"{{url_global}}"
+						"api",
+						"trello",
+						"com"
 					],
 					"path": [
+						"1",
 						"lists",
 						"{{listID}}"
 					]
@@ -742,11 +774,15 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "{{url_global}}/boards/{{boardID}}",
+					"raw": "https://api.trello.com/1/boards/{{boardID}}",
+					"protocol": "https",
 					"host": [
-						"{{url_global}}"
+						"api",
+						"trello",
+						"com"
 					],
 					"path": [
+						"1",
 						"boards",
 						"{{boardID}}"
 					]
