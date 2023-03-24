@@ -1,0 +1,758 @@
+{
+	"info": {
+		"_postman_id": "ababf8c4-75a9-49b7-92e5-0bfbccbddabd",
+		"name": "Trello Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26181606"
+	},
+	"item": [
+		{
+			"name": "Create a board",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"var jsonData = JSON.parse(responseBody);\r",
+							"pm.environment.set(\"boardID\", jsonData.id);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "oauth1",
+					"oauth1": [
+						{
+							"key": "token",
+							"value": "ATTA6970b42c961bb0637f621e9186a65d81f67b49f047f3f119f5e6cddfa264200c0ABF501A",
+							"type": "string"
+						},
+						{
+							"key": "tokenSecret",
+							"value": "913321a7459941dec1261f8fc18d0b9a7875923c4fd1622e1001989ea9fe29c9",
+							"type": "string"
+						},
+						{
+							"key": "consumerSecret",
+							"value": "913321a7459941dec1261f8fc18d0b9a7875923c4fd1622e1001989ea9fe29c9",
+							"type": "string"
+						},
+						{
+							"key": "consumerKey",
+							"value": "ccaf712ce2030439bab8c23a2b1bfc27",
+							"type": "string"
+						},
+						{
+							"key": "signatureMethod",
+							"value": "HMAC-SHA1",
+							"type": "string"
+						},
+						{
+							"key": "version",
+							"value": "1.0",
+							"type": "string"
+						},
+						{
+							"key": "addParamsToHeader",
+							"value": false,
+							"type": "boolean"
+						},
+						{
+							"key": "addEmptyParamsToSign",
+							"value": false,
+							"type": "boolean"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"newBoardNAME\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url_global}}/boards/",
+					"host": [
+						"{{url_global}}"
+					],
+					"path": [
+						"boards",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all boards",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "oauth1",
+					"oauth1": [
+						{
+							"key": "token",
+							"value": "ATTA6970b42c961bb0637f621e9186a65d81f67b49f047f3f119f5e6cddfa264200c0ABF501A",
+							"type": "string"
+						},
+						{
+							"key": "tokenSecret",
+							"value": "913321a7459941dec1261f8fc18d0b9a7875923c4fd1622e1001989ea9fe29c9",
+							"type": "string"
+						},
+						{
+							"key": "consumerSecret",
+							"value": "913321a7459941dec1261f8fc18d0b9a7875923c4fd1622e1001989ea9fe29c9",
+							"type": "string"
+						},
+						{
+							"key": "consumerKey",
+							"value": "ccaf712ce2030439bab8c23a2b1bfc27",
+							"type": "string"
+						},
+						{
+							"key": "signatureMethod",
+							"value": "HMAC-SHA1",
+							"type": "string"
+						},
+						{
+							"key": "version",
+							"value": "1.0",
+							"type": "string"
+						},
+						{
+							"key": "addParamsToHeader",
+							"value": false,
+							"type": "boolean"
+						},
+						{
+							"key": "addEmptyParamsToSign",
+							"value": false,
+							"type": "boolean"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{url_global}}/members/me/boards",
+					"host": [
+						"{{url_global}}"
+					],
+					"path": [
+						"members",
+						"me",
+						"boards"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get a single board",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "oauth1",
+					"oauth1": [
+						{
+							"key": "token",
+							"value": "ATTA6970b42c961bb0637f621e9186a65d81f67b49f047f3f119f5e6cddfa264200c0ABF501A",
+							"type": "string"
+						},
+						{
+							"key": "tokenSecret",
+							"value": "913321a7459941dec1261f8fc18d0b9a7875923c4fd1622e1001989ea9fe29c9",
+							"type": "string"
+						},
+						{
+							"key": "consumerSecret",
+							"value": "913321a7459941dec1261f8fc18d0b9a7875923c4fd1622e1001989ea9fe29c9",
+							"type": "string"
+						},
+						{
+							"key": "consumerKey",
+							"value": "ccaf712ce2030439bab8c23a2b1bfc27",
+							"type": "string"
+						},
+						{
+							"key": "signatureMethod",
+							"value": "HMAC-SHA1",
+							"type": "string"
+						},
+						{
+							"key": "version",
+							"value": "1.0",
+							"type": "string"
+						},
+						{
+							"key": "addParamsToHeader",
+							"value": false,
+							"type": "boolean"
+						},
+						{
+							"key": "addEmptyParamsToSign",
+							"value": false,
+							"type": "boolean"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{url_global}}/boards/{{boardID}}",
+					"host": [
+						"{{url_global}}"
+					],
+					"path": [
+						"boards",
+						"{{boardID}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update a board",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "oauth1",
+					"oauth1": [
+						{
+							"key": "token",
+							"value": "ATTA6970b42c961bb0637f621e9186a65d81f67b49f047f3f119f5e6cddfa264200c0ABF501A",
+							"type": "string"
+						},
+						{
+							"key": "tokenSecret",
+							"value": "913321a7459941dec1261f8fc18d0b9a7875923c4fd1622e1001989ea9fe29c9",
+							"type": "string"
+						},
+						{
+							"key": "consumerSecret",
+							"value": "913321a7459941dec1261f8fc18d0b9a7875923c4fd1622e1001989ea9fe29c9",
+							"type": "string"
+						},
+						{
+							"key": "consumerKey",
+							"value": "ccaf712ce2030439bab8c23a2b1bfc27",
+							"type": "string"
+						},
+						{
+							"key": "signatureMethod",
+							"value": "HMAC-SHA1",
+							"type": "string"
+						},
+						{
+							"key": "version",
+							"value": "1.0",
+							"type": "string"
+						},
+						{
+							"key": "addParamsToHeader",
+							"value": false,
+							"type": "boolean"
+						},
+						{
+							"key": "addEmptyParamsToSign",
+							"value": false,
+							"type": "boolean"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"new name\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url_global}}/boards/{{boardID}}",
+					"host": [
+						"{{url_global}}"
+					],
+					"path": [
+						"boards",
+						"{{boardID}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create a list",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"var jsonData = JSON.parse(responseBody);\r",
+							"pm.environment.set(\"listID\", jsonData.id);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "oauth1",
+					"oauth1": [
+						{
+							"key": "token",
+							"value": "ATTA6970b42c961bb0637f621e9186a65d81f67b49f047f3f119f5e6cddfa264200c0ABF501A",
+							"type": "string"
+						},
+						{
+							"key": "tokenSecret",
+							"value": "913321a7459941dec1261f8fc18d0b9a7875923c4fd1622e1001989ea9fe29c9",
+							"type": "string"
+						},
+						{
+							"key": "consumerSecret",
+							"value": "913321a7459941dec1261f8fc18d0b9a7875923c4fd1622e1001989ea9fe29c9",
+							"type": "string"
+						},
+						{
+							"key": "consumerKey",
+							"value": "ccaf712ce2030439bab8c23a2b1bfc27",
+							"type": "string"
+						},
+						{
+							"key": "signatureMethod",
+							"value": "HMAC-SHA1",
+							"type": "string"
+						},
+						{
+							"key": "version",
+							"value": "1.0",
+							"type": "string"
+						},
+						{
+							"key": "addParamsToHeader",
+							"value": false,
+							"type": "boolean"
+						},
+						{
+							"key": "addEmptyParamsToSign",
+							"value": false,
+							"type": "boolean"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"new list name rrr\",\r\n    \"idBoard\": \"{{boardID}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url_global}}/lists",
+					"host": [
+						"{{url_global}}"
+					],
+					"path": [
+						"lists"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all the lists on board",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "oauth1",
+					"oauth1": [
+						{
+							"key": "token",
+							"value": "ATTA6970b42c961bb0637f621e9186a65d81f67b49f047f3f119f5e6cddfa264200c0ABF501A",
+							"type": "string"
+						},
+						{
+							"key": "tokenSecret",
+							"value": "913321a7459941dec1261f8fc18d0b9a7875923c4fd1622e1001989ea9fe29c9",
+							"type": "string"
+						},
+						{
+							"key": "consumerSecret",
+							"value": "913321a7459941dec1261f8fc18d0b9a7875923c4fd1622e1001989ea9fe29c9",
+							"type": "string"
+						},
+						{
+							"key": "consumerKey",
+							"value": "ccaf712ce2030439bab8c23a2b1bfc27",
+							"type": "string"
+						},
+						{
+							"key": "signatureMethod",
+							"value": "HMAC-SHA1",
+							"type": "string"
+						},
+						{
+							"key": "version",
+							"value": "1.0",
+							"type": "string"
+						},
+						{
+							"key": "addParamsToHeader",
+							"value": false,
+							"type": "boolean"
+						},
+						{
+							"key": "addEmptyParamsToSign",
+							"value": false,
+							"type": "boolean"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{url_global}}/boards/{{boardID}}/lists",
+					"host": [
+						"{{url_global}}"
+					],
+					"path": [
+						"boards",
+						"{{boardID}}",
+						"lists"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get a list",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "oauth1",
+					"oauth1": [
+						{
+							"key": "token",
+							"value": "ATTA6970b42c961bb0637f621e9186a65d81f67b49f047f3f119f5e6cddfa264200c0ABF501A",
+							"type": "string"
+						},
+						{
+							"key": "tokenSecret",
+							"value": "913321a7459941dec1261f8fc18d0b9a7875923c4fd1622e1001989ea9fe29c9",
+							"type": "string"
+						},
+						{
+							"key": "consumerSecret",
+							"value": "913321a7459941dec1261f8fc18d0b9a7875923c4fd1622e1001989ea9fe29c9",
+							"type": "string"
+						},
+						{
+							"key": "consumerKey",
+							"value": "ccaf712ce2030439bab8c23a2b1bfc27",
+							"type": "string"
+						},
+						{
+							"key": "signatureMethod",
+							"value": "HMAC-SHA1",
+							"type": "string"
+						},
+						{
+							"key": "version",
+							"value": "1.0",
+							"type": "string"
+						},
+						{
+							"key": "addParamsToHeader",
+							"value": false,
+							"type": "boolean"
+						},
+						{
+							"key": "addEmptyParamsToSign",
+							"value": false,
+							"type": "boolean"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url_global}}/lists/{{listID}}",
+					"host": [
+						"{{url_global}}"
+					],
+					"path": [
+						"lists",
+						"{{listID}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update a list",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "oauth1",
+					"oauth1": [
+						{
+							"key": "token",
+							"value": "ATTA6970b42c961bb0637f621e9186a65d81f67b49f047f3f119f5e6cddfa264200c0ABF501A",
+							"type": "string"
+						},
+						{
+							"key": "tokenSecret",
+							"value": "913321a7459941dec1261f8fc18d0b9a7875923c4fd1622e1001989ea9fe29c9",
+							"type": "string"
+						},
+						{
+							"key": "consumerSecret",
+							"value": "913321a7459941dec1261f8fc18d0b9a7875923c4fd1622e1001989ea9fe29c9",
+							"type": "string"
+						},
+						{
+							"key": "consumerKey",
+							"value": "ccaf712ce2030439bab8c23a2b1bfc27",
+							"type": "string"
+						},
+						{
+							"key": "signatureMethod",
+							"value": "HMAC-SHA1",
+							"type": "string"
+						},
+						{
+							"key": "version",
+							"value": "1.0",
+							"type": "string"
+						},
+						{
+							"key": "addParamsToHeader",
+							"value": false,
+							"type": "boolean"
+						},
+						{
+							"key": "addEmptyParamsToSign",
+							"value": false,
+							"type": "boolean"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"i just updated a list\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url_global}}/lists/{{listID}}",
+					"host": [
+						"{{url_global}}"
+					],
+					"path": [
+						"lists",
+						"{{listID}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete a board",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"pm.environment.unset(\"boardID\");\r",
+							"pm.environment.unset(\"listID\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "oauth1",
+					"oauth1": [
+						{
+							"key": "token",
+							"value": "ATTA6970b42c961bb0637f621e9186a65d81f67b49f047f3f119f5e6cddfa264200c0ABF501A",
+							"type": "string"
+						},
+						{
+							"key": "tokenSecret",
+							"value": "913321a7459941dec1261f8fc18d0b9a7875923c4fd1622e1001989ea9fe29c9",
+							"type": "string"
+						},
+						{
+							"key": "consumerSecret",
+							"value": "913321a7459941dec1261f8fc18d0b9a7875923c4fd1622e1001989ea9fe29c9",
+							"type": "string"
+						},
+						{
+							"key": "consumerKey",
+							"value": "ccaf712ce2030439bab8c23a2b1bfc27",
+							"type": "string"
+						},
+						{
+							"key": "signatureMethod",
+							"value": "HMAC-SHA1",
+							"type": "string"
+						},
+						{
+							"key": "version",
+							"value": "1.0",
+							"type": "string"
+						},
+						{
+							"key": "addParamsToHeader",
+							"value": false,
+							"type": "boolean"
+						},
+						{
+							"key": "addEmptyParamsToSign",
+							"value": false,
+							"type": "boolean"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{url_global}}/boards/{{boardID}}",
+					"host": [
+						"{{url_global}}"
+					],
+					"path": [
+						"boards",
+						"{{boardID}}"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
